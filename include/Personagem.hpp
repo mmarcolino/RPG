@@ -15,13 +15,19 @@ private:
     Race* raca;
     Inventario inventario;
     std::vector<Magia*> magias;
-    std::vector<int> atributos; // [HP, MP, Atk, Def]
+    // Atributos individuais (mesmos da Classe.hpp)
+    int hp;
+    int mp;
+    int ataqueFisico;
+    int ataqueMagico;
+    int defesa;
+    int agilidade;
     int nivel;
 public:
     Personagem(const std::string& nome,
                Classe* classe,
                Race* raca,
-               const std::vector<int>& atributosBase,
+               int hp, int mp, int ataqueFisico, int ataqueMagico, int defesa, int agilidade,
                int nivel = 1);
 
     // Métodos de acesso e manipulação
@@ -31,7 +37,27 @@ public:
     Inventario& getInventario();
     const std::vector<Magia*>& getMagias() const;
     void adicionarMagia(Magia* magia);
-    const std::vector<int>& getAtributos() const;
+    
+    // Métodos de acesso aos atributos
+    int getHP() const;
+    int getMP() const;
+    int getAtaqueFisico() const;
+    int getAtaqueMagico() const;
+    int getDefesa() const;
+    int getAgilidade() const;
+    int getNivel() const;
+    
+    // Métodos de modificação dos atributos
+    void setHP(int novoHP);
+    void setMP(int novoMP);
+    void setAtaqueFisico(int novoAtaqueFisico);
+    void setAtaqueMagico(int novoAtaqueMagico);
+    void setDefesa(int novaDefesa);
+    void setAgilidade(int novaAgilidade);
+    void setNivel(int novoNivel);
+    
+    // Método para adicionar pontos extras
+    void adicionarPontos(int hp, int mp, int ataqueFisico, int ataqueMagico, int defesa, int agilidade);
 };
 
 #endif 

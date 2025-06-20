@@ -4,6 +4,7 @@
 #include <vector>
 #include <string>
 #include <iostream>
+#include <fstream>
 
 /**
  * @brief Enum que representa os tipos de itens possíveis no inventário.
@@ -68,6 +69,23 @@ public:
      * @brief Mostra todos os itens e quantidades no inventário.
      */
     void mostrarInventario() const;
+    
+    /**
+     * @brief Salva o inventário em um arquivo.
+     * @param arquivo Arquivo de saída onde salvar.
+     */
+    void salvarInventario(std::ofstream& arquivo) const;
+    
+    /**
+     * @brief Carrega o inventário de um arquivo.
+     * @param arquivo Arquivo de entrada de onde carregar.
+     */
+    void carregarInventario(std::ifstream& arquivo);
+    
+    /**
+     * @brief Limpa todos os itens do inventário.
+     */
+    void limparInventario();
 };
 
 #endif

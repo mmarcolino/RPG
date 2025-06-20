@@ -1,1 +1,27 @@
-/docs
+# Arquivos compilados
+bin/
+obj/
+
+# Arquivos de dados do jogo
+*.txt
+
+# Arquivos de documentação gerados
+docs/
+
+# Arquivos temporários
+*.o
+*.out
+*.exe
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+
+# Arquivos de IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
